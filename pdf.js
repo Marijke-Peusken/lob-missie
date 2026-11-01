@@ -9,7 +9,7 @@ const pages=[];let commands=[],y=785,page=1;
 const text=(value,size=10,font='F1',color='0.235 0.235 0.235')=>{if(y<65)finish();commands.push(`BT /${font} ${size} Tf ${color} rg 1 0 0 1 48 ${y} Tm (${literal(value)}) Tj ET`);y-=size+5;};
 function finish(){commands.push(`BT /F1 9 Tf 0.35 0.39 0.42 rg 1 0 0 1 48 32 Tm (Gemaakt door Marijke Peusken | Aventus | 2026 | Pagina ${page++}) Tj ET`);pages.push(commands.join('\n'));commands=[];y=785;}
 function para(s){for(const line of wrap(s||'Nog niet ingevuld'))text(line);y-=6;}
-text('MIJN TOEKOMST? GEEN IDEE!',19,'F2');text('Persoonlijke startkaart - Leerjaar 2 - Periode 2',11,'F2');y-=8;
+text('MIJN TOEKOMST? GEEN IDEE!',19,'F2');text('Persoonlijke startkaart - LOB',11,'F2');y-=8;
 para('Naam: '+(state.name||'Niet ingevuld')+' | Klas: '+(state.group||'Niet ingevuld'));
 para('Gemaakt op: '+new Date().toLocaleDateString('nl-NL',{timeZone:'Europe/Amsterdam'}));
 for(let i=0;i<missions.length;i++){
